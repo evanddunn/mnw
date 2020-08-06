@@ -5,7 +5,7 @@ import logo from '../logo.svg'
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 export default class NavBar extends React.Component {
 
@@ -17,18 +17,42 @@ export default class NavBar extends React.Component {
   render() {
     return(
       <Container className="NavBar">
-        <Nav className="Logo justify-content-center">
-            <img height="100" src={logo}/>
-        </Nav>
-        <Nav className="Links justify-content-between">
-          {this.props.sections.map((section) => (
-            <Nav.Item>
-              <Nav.Link active as={Link} to={section.route}>
-                {section.title}
-              </Nav.Link>
-            </Nav.Item>
-          ))}
-        </Nav>
+        {!this.props.home 
+          ?
+            <div>
+              <Row className="justify-content-center mt-3">
+                <Nav className="Logo">
+                    <img height="100" src={logo}/>
+                </Nav>
+              </Row>
+              <Row className="justify-content-center">
+                <Nav className="Links">
+                  {this.props.sections.map((section) => (
+                    <Nav.Item>
+                      <Nav.Link active as={Link} to={section.route}>
+                        {section.title}
+                      </Nav.Link>
+                    </Nav.Item>
+                  ))}
+                </Nav>
+              </Row>
+            </div>
+          :
+            <Row className="justify-content-between">
+              <Nav className="">
+                  <h2 className="text-green">Molly N. Weybright | Writer</h2>
+              </Nav>
+              <Nav className="Links">
+                  {this.props.sections.map((section) => (
+                    <Nav.Item>
+                      <Nav.Link active as={Link} to={section.route}>
+                        {section.title}
+                      </Nav.Link>
+                    </Nav.Item>
+                  ))}
+                </Nav>
+            </Row>
+        }
       </Container>
     );
   }
