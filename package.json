@@ -1,5 +1,6 @@
 {
     "scripts": {
-    "start": "cd express && yarn start"
+      "start": "cd express && yarn start",
+      "heroku-postbuild": "cd react && yarn && yarn run build"
   }
 }
