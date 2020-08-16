@@ -17,12 +17,13 @@ function Modal(props) {
     >
       <_Modal.Header closeButton>
         <_Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Resume
         </_Modal.Title>
       </_Modal.Header>
       <_Modal.Body>
         <Document
-          file={test}
+          file={"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"}
+          // file={test}
           onLoadError={console.error}
         >
           <Page pageNumber={1}/>

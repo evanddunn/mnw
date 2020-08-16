@@ -7,7 +7,7 @@ import { Home as home } from '../views/Home'
 import About from '../views/About'
 import Reading from '../views/Reading'
 import Portfolio from '../views/Portfolio'
-import logo from '../logo.svg'
+import logo from '../assets/logo1.png'
 
 const sections = [
   {title: 'Home', route:'/home', component: <home />}, 

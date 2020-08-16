@@ -24,9 +24,14 @@ const sections = [
 
 function App(props) {
     return (
-      <Container className="App">
+      <Container className="App" style={{
+        position: 'relative',
+        minHeight: '100vh',
+      }}>
         {useLocation().pathname !== '/home' ? <NavBar sections={sections} /> : null}
-        <div className="Body">
+        <div className="Body" style={{
+          paddingBottom: '100px',
+        }}>
             <Switch>
               <Redirect from="/" exact to="/home" />
               {sections.map((section) => (
@@ -36,7 +41,12 @@ function App(props) {
               ))}
             </Switch>
         </div>
-        <Container className="fixed-bottom">
+        <Container className="bg-offWhite" style={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            height: '92px'
+          }}>
           <Row >
             <Col className="d-flex w-100 mb-1 justify-content-center">
               <a href="https://www.linkedin.com/in/mollyweybright/"><AiFillLinkedin className="mr-1"/></a>

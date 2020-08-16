@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles.css'
 import { Link } from 'react-router-dom';
-import logo from '../logo.svg'
+import logo from '../assets/logo1.png'
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -40,7 +40,7 @@ export default class NavBar extends React.Component {
           :
             <Row className="justify-content-between">
               <Nav className="">
-                  <h2 className="text-green">Molly N. Weybright | Writer</h2>
+                  <h2 className="">Molly N. Weybright | Writer</h2>
               </Nav>
               <Nav className="Links">
                   {this.props.sections.map((section) => (
