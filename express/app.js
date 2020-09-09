@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var sectionsRouter = require('./routes/sections');
+var blogRouter = require('./routes/blog');
 var adminRouter= require('./routes/admin');
 
 var app = express();
@@ -21,12 +21,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../react/build')));
 
 app.use('/', indexRouter);
-app.use('/sections', sectionsRouter);
+app.use('/blog', blogRouter);
 app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
+});
+
+app.use(express.json())
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
+  next();
 });
 
 // error handler

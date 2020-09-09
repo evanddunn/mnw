@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Row, Col, Media, CardGroup } from 'react-bootstrap';
+import { Card, Container, Row, Col, Media, CardGroup, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
@@ -17,6 +17,7 @@ const sections = [
 ];
 
 export default class Home extends React.Component  {
+
   render () {
     return (
       <Container>

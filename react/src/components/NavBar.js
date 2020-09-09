@@ -27,8 +27,8 @@ export default class NavBar extends React.Component {
               </Row>
               <Row className="justify-content-center">
                 <Nav className="Links">
-                  {this.props.sections.map((section) => (
-                    <Nav.Item>
+                  {this.props.sections.map((section, i) => (
+                    <Nav.Item key={i}>
                       <Nav.Link active as={Link} to={section.route}>
                         {section.title}
                       </Nav.Link>
