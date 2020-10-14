@@ -3,18 +3,12 @@ import { Card, Container, Row, Col, Media, CardGroup, Button } from 'react-boots
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
-import { Home as home } from '../views/Home'
-import About from '../views/About'
-import Reading from '../views/Reading'
-import Portfolio from '../views/Portfolio'
-import logo from '../assets/logo1.png'
-
-const sections = [
-  {title: 'Home', route:'/home', component: <home />}, 
-  {title: 'About', route:'/about', component: <About />}, 
-  {title: 'Reading', route:'/reading', component: <Reading />}, 
-  {title: 'Portfolio', route:'/portfolio', component: <Portfolio />},
-];
+import { Home as home } from '../views/Home';
+import About from '../views/About';
+import Reading from '../views/Reading';
+import Portfolio from '../views/Portfolio';
+import logo from '../assets/logo1.png';
+import mollyHero from '../assets/molly-hero.jpg';
 
 export default class Home extends React.Component  {
 
@@ -28,7 +22,7 @@ export default class Home extends React.Component  {
             <img
               width={1000}
               className="mb-3"
-              src="https://format-com-cld-res.cloudinary.com/image/private/s--XsBfUMxq--/c_crop,h_675,w_1215,x_0,y_0/c_fill,g_center,h_534,w_960/dpr_2,fl_keep_iptc.progressive.apng/v1/6eb2389e6427a13540adbb1abec7622b/Screen_Shot_2017-02-22_at_12_36_54_PM.png"
+              src={mollyHero}
               alt="Molly N. Weybright"
               style={{
                 borderRadius: '5px',
@@ -36,7 +30,7 @@ export default class Home extends React.Component  {
               }}
             />
           </Row>
-        <NavBar home sections={sections} />
+        <NavBar home />
       </Container>
     )
   }

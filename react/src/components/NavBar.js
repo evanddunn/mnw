@@ -5,7 +5,19 @@ import logo from '../assets/logo1.png'
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { Container, Row } from 'react-bootstrap';
+import { Button, Container, Dropdown, DropdownButton, Row } from 'react-bootstrap';
+
+import Home  from '../views/Home'
+import About from '../views/About'
+import Reading from '../views/Reading'
+import Portfolio from '../views/Portfolio'
+
+const sections = [
+  {title: 'Home', route:'/home', component: <Home />}, 
+  {title: 'About', route:'/about', component: <About />}, 
+  // {title: 'Reading', route:'/reading', component: <Reading />}, 
+  {title: 'Portfolio', route: '/portfolio', component: <Portfolio />},
+];
 
 export default class NavBar extends React.Component {
 
@@ -27,11 +39,36 @@ export default class NavBar extends React.Component {
               </Row>
               <Row className="justify-content-center">
                 <Nav className="Links">
-                  {this.props.sections.map((section, i) => (
+                  {sections.map((section, i) => (
                     <Nav.Item key={i}>
-                      <Nav.Link active as={Link} to={section.route}>
-                        {section.title}
-                      </Nav.Link>
+                      {
+                        section.title != 'Portfolio' 
+                        ? 
+                          <Nav.Link active as={Link} to={section.route}>
+                            {section.title} 
+                          </Nav.Link>
+                        : 
+                          <Dropdown>
+                            <Dropdown.Toggle variant='link'>{section.title}</Dropdown.Toggle>
+                            <Dropdown.Menu>
+                              <Dropdown.Item href="">
+                                <Nav.Link active as={Link} to={'/portfolio'}>
+                                  Graphic Design
+                                </Nav.Link>
+                              </Dropdown.Item>
+                              <Dropdown.Item href="">
+                                <Nav.Link active as={Link} to={'/portfolio'}>
+                                  Fiction
+                                </Nav.Link>
+                              </Dropdown.Item>
+                              <Dropdown.Item>
+                                <Nav.Link active as={Link} to={'/portfolio'}>
+                                  Jounralism
+                                </Nav.Link>
+                              </Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        }
                     </Nav.Item>
                   ))}
                 </Nav>
@@ -43,11 +80,36 @@ export default class NavBar extends React.Component {
                   <h2 className="">Molly N. Weybright | Writer</h2>
               </Nav>
               <Nav className="Links">
-                  {this.props.sections.map((section, i) => (
+                  {sections.map((section, i) => (
                     <Nav.Item key={i}>
-                      <Nav.Link key={i} active as={Link} to={section.route}>
-                        {section.title}
-                      </Nav.Link>
+                      {
+                        section.title != 'Portfolio' 
+                        ? 
+                          <Nav.Link active as={Link} to={section.route}>
+                            {section.title} 
+                          </Nav.Link>
+                        : 
+                          <Dropdown>
+                            <Dropdown.Toggle variant='link'>{section.title}</Dropdown.Toggle>
+                            <Dropdown.Menu>
+                              <Dropdown.Item href="">
+                                <Nav.Link active as={Link} to={'/portfolio'}>
+                                  Graphic Design
+                                </Nav.Link>
+                              </Dropdown.Item>
+                              <Dropdown.Item href="">
+                                <Nav.Link active as={Link} to={'/portfolio'}>
+                                  Fiction
+                                </Nav.Link>
+                              </Dropdown.Item>
+                              <Dropdown.Item>
+                                <Nav.Link active as={Link} to={'/portfolio'}>
+                                  Jounralism
+                                </Nav.Link>
+                              </Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        }
                     </Nav.Item>
                   ))}
                 </Nav>

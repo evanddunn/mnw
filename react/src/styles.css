@@ -144,7 +144,7 @@ a {
   background-color: transparent; }
   a:hover {
     color: #6a6a6a;
-    text-decoration: underline; }
+    text-decoration: none; }
 
 a:not([href]):not([class]) {
   color: inherit;
@@ -2810,9 +2810,9 @@ fieldset:disabled a.btn {
   text-decoration: none; }
   .btn-link:hover {
     color: #6a6a6a;
-    text-decoration: underline; }
+    text-decoration: none; }
   .btn-link:focus, .btn-link.focus {
-    text-decoration: underline; }
+    text-decoration: none; }
   .btn-link:disabled, .btn-link.disabled {
     color: #6c757d;
     pointer-events: none; }

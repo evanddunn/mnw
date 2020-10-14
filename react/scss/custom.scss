@@ -1,3 +1,4 @@
+// sass scss/custom.scss src/styles.css
 $theme-colors: (
     "primary": #84A98C,
     "secondary":  #F28F3B,
@@ -15,6 +16,7 @@ $theme-colors: (
 $link-hover-color: #6a6a6a;
 $link-color: #1e1e1f !default;
 $font-family-sans-serif: 'Raleway', sans-serif;
+$link-hover-decoration: none !default;
 
 // Required
 @import "../node_modules/bootstrap/scss/bootstrap"

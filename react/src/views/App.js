@@ -36,7 +36,7 @@ function App(props) {
       position: 'relative',
       minHeight: '100vh',
     }}>
-      {useLocation().pathname !== '/home' ? <NavBar sections={sections} /> : null}
+      {useLocation().pathname !== '/home' ? <NavBar/> : null}
       <div className="Body" style={{
         paddingBottom: '100px',
       }}>
